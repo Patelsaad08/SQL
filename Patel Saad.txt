@@ -1,0 +1,17 @@
+Definition of Stored Procedures
+
+
+(1) :- A stored procedure is a named set of SQL statements that can be executed together. Once created, it can be invoked multiple times, allowing for code reuse and modular programming. Stored procedures can accept input parameters, return output parameters, and even return result sets. They are stored in the database and can be executed by applications or users with appropriate permissions.  
+
+
+(2) :-A stored procedure is a subroutine available to applications that access a relational database management system (RDBMS). Such procedures are stored in the database data dictionary. They can consolidate and centralize logic that was originally implemented in applications, saving time and memory by executing several SQL statements as a single unit. Stored procedures may return result sets, process data with declared variables, and utilize flow-control statements like IF, WHILE, and CASE.
+
+
+(3) :-A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow statements stored in a database. It serves as a reusable unit of logic that can be executed repeatedly to perform specific database operations. Benefits include improved performance due to precompiled execution, enhanced security by eliminating direct access to database tables, and simplified maintenance through centralized logic. 
+
+------------------------------------------------------------------------------------------------------
+
+
+
+
+ 

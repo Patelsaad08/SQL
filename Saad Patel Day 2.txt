@@ -1,0 +1,104 @@
+Definition of Stored Procedures
+
+
+(1) :- A stored procedure is a named set of SQL statements that can be executed together. Once created, it can be invoked multiple times, allowing for code reuse and modular programming. Stored procedures can accept input parameters, return output parameters, and even return result sets. They are stored in the database and can be executed by applications or users with appropriate permissions.  
+
+
+(2) :-A stored procedure is a subroutine available to applications that access a relational database management system (RDBMS). Such procedures are stored in the database data dictionary. They can consolidate and centralize logic that was originally implemented in applications, saving time and memory by executing several SQL statements as a single unit. Stored procedures may return result sets, process data with declared variables, and utilize flow-control statements like IF, WHILE, and CASE.
+
+
+(3) :-A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow statements stored in a database. It serves as a reusable unit of logic that can be executed repeatedly to perform specific database operations. Benefits include improved performance due to precompiled execution, enhanced security by eliminating direct access to database tables, and simplified maintenance through centralized logic. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+(CODE)
+
+:-CREATE DATABASE Patel77;
+GO
+
+-- Switch to the Patel77 database
+USE Patel77;
+GO
+
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Age INT
+);
+CREATE PROCEDURE Insert1
+    @EmployeeID INT,
+    @FirstName VARCHAR(50),
+    @LastName VARCHAR(50),
+    @Age INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Employee (EmployeeID, FirstName, LastName, Age)
+    VALUES (@EmployeeID, @FirstName, @LastName, @Age);
+    SELECT 'Employee added successfully' AS Message;
+END;
+
+select * from Employee;
+
+EXEC Insert1
+    @EmployeeID = 5,
+    @FirstName = 'Patel',
+    @LastName = 'Danish',
+    @Age = 27;
+
+insert into Employee (EmployeeID, FirstName, LastName, Age)
+ values (5,'Patel','Danish',27);
+ 
+ CREATE PROCEDURE UpdateEmployee
+    @EmployeeID INT,
+    @FirstName VARCHAR(50),
+    @LastName VARCHAR(50),
+    @Age INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE Employee
+    SET FirstName = @FirstName, LastName = @LastName, Age = @Age
+    WHERE EmployeeID = @EmployeeID;
+    SELECT 'Employee updated successfully' AS Message;
+END;
+
+EXEC UpdateEmployee
+    @EmployeeID = 4,
+    @FirstName = 'Patel',
+    @LastName = 'Wasey',
+    @Age = 21;
+
+CREATE PROCEDURE DeleteEmployee
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DELETE FROM Employee WHERE EmployeeID = @EmployeeID;
+    SELECT 'Employee deleted successfully' AS Message;
+END;
+
+
+EXEC DeleteEmployee
+    @EmployeeID = 3;
+
+CREATE PROCEDURE SearchEmployee
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT EmployeeID, FirstName, LastName, Age
+    FROM Employee
+    WHERE EmployeeID = @EmployeeID;
+END;
+
+EXEC SearchEmployee
+    @EmployeeID = 2;
+select * from Employee;
+
+
+
+
+
+
+ 

@@ -1,0 +1,50 @@
+( Foregin Key )
+
+(1):-A foreign key is a column (or set of columns) in a table that refers to the primary key in another table. It's used to establish a link between the two tables, ensuring data integrity and creating relationships between them. Think of it as a way to link two tables based on a shared identifier.  
+
+
+(2):-A foreign key (FK) is a column or combination of columns that is used to establish and enforce a link between the data in two tables to control the data that can be stored in the foreign key table. In a foreign key reference, a link is created between two tables when the column or columns that hold the primary key value for one table are referenced by the column or columns in another table. This column becomes a foreign key in the second table.
+
+
+(3):-Foreign key columns are frequently used in join criteria when the data from related tables is combined in queries by matching the column or columns in the foreign key constraint of one table with the primary or unique key column or columns in the other table. An index enables the Database Engine to quickly find related data in the foreign key table.
+
+
+
+(4):-Foreign Key Advantages:
+Referential Integrity:
+Enforces relationships between tables, ensuring data consistency and accuracy. 
+Data Relationships:
+Facilitates the establishment and maintenance of relationships between tables. 
+Data Consistency:
+Foreign keys ensure that data in related tables is consistent, preventing inconsistencies. 
+Cascading Actions:
+Can be configured with cascading actions (e.g., ON DELETE CASCADE) to automatically propagate changes in related tables. 
+Foreign Key Disadvantages:
+Performance Degradation:
+Foreign key checks can slow down insert and update operations, especially in high-concurrency environments. 
+Increased Complexity:
+Managing foreign keys and their constraints can add complexity to database design and management. 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+( Primary key )
+
+
+(1):-A primary key is a column or set of columns in a database table that uniquely identifies each record (row) in the table. It ensures that each row has a distinct value for that column or combination of columns, preventing duplicates. 
+
+
+(2):-The primary key must have unique values, meaning no two rows can have the same primary key value.The primary key cannot contain NULL values, as NULL values would not provide a unique identifier.A table can only have one primary key. A primary key can be composed of multiple columns, known as a composite key. 
+
+
+(3):- Primary keys offer several advantages in database management. They uniquely identify each record, prevent duplicates, ensure data integrity, and enhance query performance. By using primary keys, databases can be designed efficiently, relationships between tables can be established, and data consistency can be maintained.When a primary key is defined, the database system often automatically creates a unique index on the primary key column(s), which can improve query performance. 
+
+
+(5):-Primary Key Advantages:
+Data Integrity:
+Ensures each row in a table is unique, preventing duplicate data and maintaining data consistency. 
+Efficient Data Retrieval:
+Primary keys are indexed, enabling faster data retrieval and manipulation. 
+Improved Performance:
+By preventing duplicates and ensuring uniqueness, primary keys contribute to overall database performance. 
+Relational Data:
+Primary keys facilitate the creation of relationships between tables using foreign keys. Limited Flexibility: Once a primary key is chosen, it can be difficult to modify or change.  
